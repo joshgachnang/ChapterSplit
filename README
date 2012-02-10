@@ -1,0 +1,30 @@
+Copyright Josh Gachnang 2012
+
+Released under the New BSD License
+
+Chapter Split is a Python tool utilizing pdftk to split a large PDF into chapters. You define chapter boundaries,
+and it will split the original file into multiple, single chapter boundaries. You can also define multiple sections 
+per new file. For example, you could have Chapter 1, and the answers from the back of the book for Chapter 1, all in 
+one PDF.
+
+It takes one argument: filename.
+The filename should be a file in the below format. Also see example.txt.
+
+
+File format:
+
+Original_File_Name.pdf
+New_File_Base_ (Will have section name and .pdf attached)
+New file name, page_start page_end
+
+Example:
+
+SuperBook.pdf
+SuperBook_
+Chapter 1, 1 15
+
+Another example using multiple sections (for example, chapter 1 plus chapter 1 answers)
+
+SuperBook.pdf
+SuperBook_
+Chapter 1, 1 15, 1004 1006
