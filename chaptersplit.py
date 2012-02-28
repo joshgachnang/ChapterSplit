@@ -1,5 +1,6 @@
 import os
 import subprocess
+import sys
 
 # Install pdftk first!!!!
 
@@ -40,3 +41,10 @@ def split(filename):
 			command += 'output %s%s.pdf' % (new_filename, section_name)
 			print "Creating%s%s.pdf" % (new_filename, section_name)
 			subprocess.call(command, shell=True)
+
+if __name__ == '__main__':
+	
+	if len(sys.argv) != 2:
+		print "Must provide a config filename"
+		sys.exit()
+	split(sys.argv[1])
